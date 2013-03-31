@@ -17,10 +17,6 @@ require 'logger'
 require 'csv'
 require 'sinatra'
 require "sinatra/reloader" if development?
-require 'capybara-webkit'
-require 'capybara'
-require 'capybara/dsl'
-require 'launchy'
 require 'erb'
 
 # Some helper constants for path-centric logic

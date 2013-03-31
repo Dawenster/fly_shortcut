@@ -42,6 +42,57 @@
 	margin: auto;
 }
 
+#dw .hero-unit {
+	margin-bottom: 80px;
+	padding: 20px 40px 40px 40px;
+}
+
+#dw .top-half {
+	display: inline;
+}
+
+#dw .price {
+	float: left;
+	margin-top: -90px;
+	margin-left: -90px;
+	width: 150px;
+	height: 150px;
+	background-image:url("/img/single_cloud.png");
+	text-align: center;
+	line-height: 160px;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+#dw .savings {
+	float: left;
+	margin-left: 20px;
+}
+
+#dw .bottom-half {
+	clear: both;
+}
+
+#dw .bottom-half table td {
+	padding: 5px;
+	margin-top: -20px;
+}
+
+#dw .bottom-half .below-table {
+	display: inline;
+}
+
+#dw .btn-success {
+	margin-top: 20px;
+	float: left;
+}
+
+#dw .flight-no {
+	float: left;
+	margin-top: 28px;
+	margin-left: 10px;
+}
+
 ul.ui-autocomplete {
   position: absolute;
   top: 100%;
