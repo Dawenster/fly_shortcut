@@ -7,10 +7,24 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/select2.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script src="/js/application.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/select2.min.js"></script>
+  <script src="/js/bootstrap-datetimepicker.min.js"></script>
 
   <title></title>
 </head>
-<body>
-  <%= yield %>
-</body>
+	<body>
+    <div id='dw'>
+      <%= yield %>
+      <%= erb :_footer %>
+    </div>
+	</body>
 </html>

@@ -20,8 +20,8 @@ end
 
 		# DIRECT ONE-WAY
 
-		jfk = Itinerary.create(	:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
-														:price => rand(60000),
+		jfk = Itinerary.create(	:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
+														:price => 60000,
 														:origin_airport_id => 924,
 														:destination_airport_id => 717)
 
@@ -33,8 +33,8 @@ end
 																:airline => AIRLINES.sample,
 																:flight_no => rand(100..999))
 
-		iah = Itinerary.create(	:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
-														:price => rand(40000),
+		iah = Itinerary.create(	:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
+														:price => 40000,
 														:origin_airport_id => 924,
 														:destination_airport_id => 410)
 
@@ -46,8 +46,8 @@ end
 																:airline => AIRLINES.sample,
 																:flight_no => rand(100..999))
 
-		ord = Itinerary.create(	:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
-														:price => rand(50000),
+		ord = Itinerary.create(	:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
+														:price => 50000,
 														:origin_airport_id => 924,
 														:destination_airport_id => 145)
 
@@ -61,7 +61,7 @@ end
 
 		# FAUX DESTINATIONS
 
-		faux_jfk = Itinerary.create(:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
+		faux_jfk = Itinerary.create(:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
 																:price => rand(50000..70000),
 																:origin_airport_id => 924,
 																:destination_airport_id => JFK_FAUX_DESTINATIONS.sample.to_i)
@@ -82,7 +82,7 @@ end
 																		:airline => jfk_flight.airline,
 																		:flight_no => rand(100..999))
 
-		faux_iah = Itinerary.create(:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
+		faux_iah = Itinerary.create(:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
 																:price => rand(30000..50000),
 																:origin_airport_id => 924,
 																:destination_airport_id => IAH_FAUX_DESTINATIONS.sample.to_i)
@@ -103,7 +103,7 @@ end
 																		:airline => iah_flight.airline,
 																		:flight_no => rand(100..999))
 
-		faux_ord = Itinerary.create(:date => Time.now + days * ONE_DAY + hours * ONE_HOUR,
+		faux_ord = Itinerary.create(:date => Time.now.beginning_of_day + days * ONE_DAY + hours * ONE_HOUR,
 																:price => rand(40000..60000),
 																:origin_airport_id => 924,
 																:destination_airport_id => ORD_FAUX_DESTINATIONS.sample.to_i)

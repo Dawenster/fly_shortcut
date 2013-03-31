@@ -13,6 +13,9 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 gem 'rake'
+gem 'capybara-webkit'
+gem 'capybara'
+gem 'launchy'
 
 group :test do
   gem 'faker'

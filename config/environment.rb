@@ -16,7 +16,10 @@ require 'logger'
 require 'csv'
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'capybara-webkit'
+require 'capybara'
+require 'capybara/dsl'
+require 'launchy'
 require 'erb'
 
 # Some helper constants for path-centric logic
@@ -30,3 +33,6 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+ONE_DAY = 60*60*24
+ONE_HOUR = 60*60
