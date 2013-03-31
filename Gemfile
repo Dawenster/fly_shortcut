@@ -9,7 +9,8 @@ gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
-
+gem 'pry'
+gem 'pry_debug'
 gem 'activesupport'
 gem 'activerecord'
 gem 'rake'

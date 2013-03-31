@@ -3,11 +3,11 @@ $(document).ready(function() {
     $('#datetimepicker4').datetimepicker({
       maskInput: true,           // disables the text input mask
 		  pickDate: true,            // disables the date picker
-		  pickTime: false,            // disables de time picker
+		  pickTime: false,           // disables de time picker
 		  pick12HourFormat: false,   // enables the 12-hour format time picker
 		  pickSeconds: true,         // disables seconds in the time picker
-		  startDate: new Date(),      // set a minimum date
-		  endDate: Infinity          // set a maximum date
+		  startDate: new Date(),     // set a minimum date
+		  endDate: new Date() + 7    // set a maximum date
     });
   });
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
       "San Francisco International, CA (SFO)"
     ];
     $("#origin").autocomplete({
-      source: availableTags
+      source: availableTags,
     });
   });
 
@@ -30,4 +30,50 @@ $(document).ready(function() {
       source: availableTags
     });
   });
+
+
+
+  $('.form-inline').submit(function(e) {
+  	e.preventDefault();
+  	var regex = /\(([^\)]+)\)/;
+  	var origin = "";
+  	var destination = "";
+  	var date = "";
+  	var concat = "";
+
+  	if ($('#origin').val() != "") {
+  		origin = '.origin' + regex.exec($('#origin').val())[1];
+  		concat = origin;
+  	}
+
+  	if ($('#destination').val() != "") {
+  		destination = '.destination' + regex.exec($('#destination').val())[1];
+  		concat = concat + destination
+  	}
+
+  	if ($('#date').val() != "") {
+  		date = '.' + $('#date').val();
+  		concat = concat + date
+  	}
+
+  	$('.hero-unit').show().effect('fade');
+  	$(concat).hide().effect('fade');
+
+
+  // 	$.ajax({
+  // 		url: '/' + origin + destination + date,
+  // 		method: 'post',
+  // 		data: {origin: origin, destination: destination, date: date}
+  // 	})
+  });
 });
+
+
+
+
+
+
+
+
+
+

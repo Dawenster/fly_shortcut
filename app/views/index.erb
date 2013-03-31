@@ -4,20 +4,14 @@
 	<div class="results">
 		<% @shortcuts.each do |shortcut_row| %>
 		<div class="row-fluid">
-		  	<div class="span6 hero-unit">
-		  		<div>From <%= Airport.find(shortcut_row[0].origin_airport_id).name %></div>
-		  		<div>To <%= Airport.find(shortcut_row[0].destination_airport_id).name %></div>
-		  		<div><%= shortcut_row[0].date %></div>
-		  		<div><%= shortcut_row[0].price %></div>
-		  	</div>
-		  	<% if shortcut_row[1] %>
-		  		<div class="span6 hero-unit">
-		  			<div>From <%= Airport.find(shortcut_row[1].origin_airport_id).name %></div>
-		  			<div>To <%= Airport.find(shortcut_row[1].destination_airport_id).name %></div>
-		  			<div><%= shortcut_row[1].date %></div>
-						<div><%= shortcut_row[1].price %></div>
-					</div>
-		  	<% end %>
+
+	  	<div class="span12 hero-unit origin<%= Airport.find(shortcut_row.origin_airport_id).code %> destination<%= Airport.find(shortcut_row.destination_airport_id).code %> <%= shortcut_row.date.to_date %>">
+	  		
+	  		<div>From <%= Airport.find(shortcut_row.origin_airport_id).name %></div>
+	  		<div>To <%= Airport.find(shortcut_row.destination_airport_id).name %></div>
+	  		<div><%= shortcut_row.date %></div>
+	  		<div><%= shortcut_row.price %></div>
+	  	</div>
 		</div>
 		<% end %>
 	</div>
