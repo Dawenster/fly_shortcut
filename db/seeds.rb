@@ -40,7 +40,7 @@ end
 
 		iah_flight = Flight.create(	:itinerary_id => iah.id,
 																:departure_airport_id => 924,
-																:arrival_airport_id => 717,
+																:arrival_airport_id => 410,
 																:departure_time => iah.date,
 																:arrival_time => iah.date + 3 * ONE_HOUR,
 																:airline => AIRLINES.sample,
@@ -53,7 +53,7 @@ end
 
 		ord_flight = Flight.create(	:itinerary_id => ord.id,
 																:departure_airport_id => 924,
-																:arrival_airport_id => 717,
+																:arrival_airport_id => 145,
 																:departure_time => ord.date,
 																:arrival_time => ord.date + 3 * ONE_HOUR,
 																:airline => AIRLINES.sample,

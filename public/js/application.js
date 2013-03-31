@@ -56,6 +56,10 @@ $(document).ready(function() {
   		concat = concat + date
   	}
 
+  	if (concat == "") {
+  		concat = '.hero-unit';
+  	}
+
   	$('.hero-unit').show().effect('fade');
   	$(concat).hide().effect('fade');
 

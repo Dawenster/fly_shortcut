@@ -2,15 +2,15 @@
 	<%= erb :_filter %>
 
 	<div class="results">
-		<% @shortcuts.each do |shortcut_row| %>
+		<% @flights.each do |flight| %>
 		<div class="row-fluid">
 
-	  	<div class="span12 hero-unit origin<%= Airport.find(shortcut_row.origin_airport_id).code %> destination<%= Airport.find(shortcut_row.destination_airport_id).code %> <%= shortcut_row.date.to_date %>">
+	  	<div class="span12 hero-unit origin<%= Airport.find(flight.departure_airport_id).code %> destination<%= Airport.find(flight.arrival_airport_id).code %> <%= flight.departure_time.to_date %>">
 	  		
-	  		<div>From <%= Airport.find(shortcut_row.origin_airport_id).name %></div>
-	  		<div>To <%= Airport.find(shortcut_row.destination_airport_id).name %></div>
-	  		<div><%= shortcut_row.date %></div>
-	  		<div><%= shortcut_row.price %></div>
+	  		<div>From <%= Airport.find(flight.departure_airport_id).name %></div>
+	  		<div>To <%= Airport.find(flight.arrival_airport_id).name %></div>
+	  		<div><%= flight.itinerary.date %></div>
+	  		<div><%= flight.itinerary.price %></div>
 	  	</div>
 		</div>
 		<% end %>
