@@ -6,11 +6,17 @@
 		<div class="row-fluid">
 
 	  	<div class="span12 hero-unit origin<%= Airport.find(flight.departure_airport_id).code %> destination<%= Airport.find(flight.arrival_airport_id).code %> <%= flight.departure_time.to_date %>">
-	  		
-	  		<div>From <%= Airport.find(flight.departure_airport_id).name %></div>
-	  		<div>To <%= Airport.find(flight.arrival_airport_id).name %></div>
-	  		<div><%= flight.itinerary.date %></div>
-	  		<div><%= flight.itinerary.price %></div>
+
+	  		<div class="top-half">
+	  			<div><%= flight.itinerary.price %></div>
+	  			<div>Save $<%= flight.itinerary.original_price - flight.itinerary.price %> off the original!</div>
+	  		</div>
+	  		<div class="bottom-half">
+		  		<div>From <%= Airport.find(flight.departure_airport_id).name %></div>
+		  		<div>To <%= Airport.find(flight.arrival_airport_id).name %></div>
+		  		<div>Dep: <%= flight.departure_time %></div>
+		  		<div>Arr: <%= flight.arrival_time %></div>
+		  	</div>
 	  	</div>
 		</div>
 		<% end %>
