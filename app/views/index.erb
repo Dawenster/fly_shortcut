@@ -1,16 +1,19 @@
 <div class="container">
-	<%= erb :_filter %>
+	<div class="row">
+		<div class="span3">
+			<%= erb :_filter %>
+		</div>
 
-	<div class="results">
-		<% @flights.each do |flight| %>
-		<div class="row-fluid">
+		<div class="span8 offset1">
+			<% @flights.each do |flight| %>
 
-	  	<div class="span10 offset1 hero-unit origin<%= Airport.find(flight.departure_airport_id).code %> destination<%= Airport.find(flight.arrival_airport_id).code %> <%= flight.departure_time.to_date %>">
+	  	<div class="hero-unit origin<%= Airport.find(flight.departure_airport_id).code %> destination<%= Airport.find(flight.arrival_airport_id).code %> <%= flight.departure_time.to_date %>">
 
 	  		<div class="top-half">
 	  			<div class="price">$<%= flight.itinerary.price / 100 + 1 %></div>
 	  			<div class="savings">Save <strong>$<%= (flight.itinerary.original_price - flight.itinerary.price) / 100 + 1 %></strong> off the original flight</div>
 	  		</div>
+
 	  		<div class="bottom-half">
 		  		<table>
 		  			<tr>
@@ -32,7 +35,7 @@
 			  	</div>
 		  	</div>
 	  	</div>
+	  	<% end %>
 		</div>
-		<% end %>
 	</div>
 </div>
